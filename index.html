@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Recipe Finder</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+ <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          card: "rgba(280, 282, 295, 0.80)",  
+          cardBorder: "rgba(120, 90, 60, 0.15)",
+          textMain: "#3A2E2A",               
+          textMuted: "#6B5E57",
+          accent: "#F2C94C",                  
+          accentHover: "#E0B83F"
+        }
+      }
+    }
+  }
+</script>
+
+</head>
+
+<body class="relative text-textLight min-h-screen">
+
+
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+       style="background-image: url('bg.jpg'); filter: brightness(0.8);"></div>
+
+  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+     style="background-image: url('bg.jpg'); filter: brightness(0.65) blur(2px);"></div>
+
+
+
+  <div class="relative z-10">
+
+
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-white text-4xl font-bold mb-2 ">🍳 AI Recipe Finder</h1>
+    <p class="text-white mb-10 mx-auto">Type the ingredients you have and discover what you can cook.</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4">
+
+    <!-- Search Section -->
+    <section class="bg-card border border-border rounded-xl p-6 shadow-xl mb-6">
+      <h2 class="text-xl font-semibold mb-3">Search by Ingredients</h2>
+
+      <label class="block mb-2 text-textDim">
+        Enter ingredients (comma separated):
+      </label>
+
+      <div class="flex gap-3">
+        <input
+          id="ingredients-input"
+          type="text"
+          placeholder="e.g. egg, tomato, cheese"
+          class="flex-1 px-3 py-2 rounded-lg bg-background border border-border text-textLight placeholder:text-textDim focus:outline-none"
+        />
+        <button
+          id="search-btn"
+          class="px-4 py-2 font-semibold rounded-lg bg-green-500 text-black hover:bg-green-400 active:scale-90 transition">
+          Search
+        </button>
+        
+      </div>
+
+      <p class="text-sm text-textDim mt-1">Tip: Start with 2–5 ingredients.</p>
+    </section>
+
+    <!-- Grid: Results + Details -->
+    <section class="grid md:grid-cols-2 gap-6 mb-6">
+
+      <!-- Results -->
+      <div class="bg-card border border-border rounded-xl p-6 shadow-xl">
+        <h2 class="text-xl font-semibold mb-3">Results</h2>
+        <div id="results-list" class="max-h-[420px] overflow-y-auto space-y-3">
+          <!-- Dynamic recipe cards -->
+        </div>
+      </div>
+
+      <!-- Recipe Details -->
+      <div class="bg-card border border-border rounded-xl p-6 shadow-xl">
+        <h2 class="text-xl font-semibold mb-3">Recipe Details</h2>
+        <div id="details-content" class="text-textDim">
+          <p>Select a recipe to see details here.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Favorites -->
+    <section class="bg-card border border-border rounded-xl p-6 shadow-xl mb-16">
+      <h2 class="text-xl font-semibold mb-3">😋 Favourites</h2>
+      <div id="favorites-list" class="space-y-3 text-textDim">
+        <p>No favorites yet. Start saving recipes!</p>
+      </div>
+    </section>
+
+  </main>
+<footer class="mt-20 py-12 text-center">
+    
+  <p class="text-lg font-bold tracking-wide" style="color:#F2C94C">
+    Built by Aditya
+  </p>
+  <p class="text-sm text-white/70 mt-1">
+    API-powered Recipe Explorer
+  </p>
+</footer>
+
+  
+
+  <script src="index.js"></script>
+  </div>
+</body>
+</html>
